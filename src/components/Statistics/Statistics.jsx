@@ -1,5 +1,6 @@
 import React from 'react';
 import Notification from 'components/Notification/Notification';
+import PropTypes from 'prop-types';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   if (total > 0) {
@@ -16,6 +17,14 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   } else {
     return <Notification message="There is no feedback"></Notification>;
   }
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.string,
 };
 
 export default Statistics;
